@@ -1,30 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1 INPUT 1 OUTPUT TEMPLATE</title>
     <style>
-
         /* STYLE FOR THE INPUT FIELD */
-        #charInput {
-
-        }
+        #charInput {}
 
         /* STYLE FOR THE SUBMIT BUTTON */
-        #submitButton {
-
-        }
+        #submitButton {}
 
         /* STYLE FOR THE IMAGE */
         #displayedImage {
-            display: none; /* This line is mandatory */
+            display: none;
+            /* This line is mandatory */
         }
     </style>
 </head>
+
 <body>
 
-    
+
     <!-- INPUT FIELD FOR 1 CHARACTER -->
     <input type="text" id="charInput" maxlength="1">
 
@@ -40,38 +38,38 @@
         // Array of images
         // DIRECTIONS: UPDATE THE URLS WITH THE RELATIVE LINKS OF YOUR IMAGES
         const images = [
-            "https://via.placeholder.com/300/00FF00/FFFFFF?text=A", //A
-            "https://via.placeholder.com/300/00FF00/FFFFFF?text=B", //B
-            "https://via.placeholder.com/300/0000FF/FFFFFF?text=C", //C
-            "https://via.placeholder.com/300/FFFF00/000000?text=D", //D
-            "https://via.placeholder.com/300/FF00FF/FFFFFF?text=E", //E
-            "https://via.placeholder.com/300/FF00FF/FFFFFF?text=F", //F
-            "https://via.placeholder.com/300/FF00FF/FFFFFF?text=G", //G
-            "https://via.placeholder.com/300/FF00FF/FFFFFF?text=H", //H
-            "https://via.placeholder.com/300/FF00FF/FFFFFF?text=I", //I
-            "https://via.placeholder.com/300/FF00FF/FFFFFF?text=J", //J
-            "https://via.placeholder.com/300/FF00FF/FFFFFF?text=K", //K
-            "https://via.placeholder.com/300/FF00FF/FFFFFF?text=L", //L
-            "https://via.placeholder.com/300/FF00FF/FFFFFF?text=M", //M
-            "https://via.placeholder.com/300/FF00FF/FFFFFF?text=N", //N
-            "https://via.placeholder.com/300/FF00FF/FFFFFF?text=O", //O
-            "https://via.placeholder.com/300/FF00FF/FFFFFF?text=P", //P
-            "https://via.placeholder.com/300/FF00FF/FFFFFF?text=Q", //Q
-            "https://via.placeholder.com/300/FF00FF/FFFFFF?text=R", //R
-            "https://via.placeholder.com/300/FF00FF/FFFFFF?text=S", //S
-            "https://via.placeholder.com/300/FF00FF/FFFFFF?text=T", //T
-            "https://via.placeholder.com/300/FF00FF/FFFFFF?text=U", //U
-            "https://via.placeholder.com/300/FF00FF/FFFFFF?text=V", //V
-            "https://via.placeholder.com/300/FF00FF/FFFFFF?text=W", //W
-            "https://via.placeholder.com/300/FF00FF/FFFFFF?text=X", //X
-            "https://via.placeholder.com/300/FF00FF/FFFFFF?text=Y", //Y
-            "https://via.placeholder.com/300/FF00FF/FFFFFF?text=Z"  //Z
+            "https://a856-citystore.nyc.gov/Products/Large/15113-large.jpg", //A
+            "https://m.media-amazon.com/images/I/B1cRsgg-hzL._CLa%7C2140%2C2000%7C51ank7toPJL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UY1000_.png", //B
+            "https://www.freewear.org/images/articles/detail/FW0351.png", //C
+            "https://ih1.redbubble.net/image.858290381.3261/ra,kids_tee,x900,FFFFFF:97ab1c12de,front-pad,750x1000,f8f8f8.u4.jpg", //D
+            "https://m.media-amazon.com/images/I/B1SynY3uFjL._CLa%7C2140%2C2000%7C61UgKufumeL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UY1000_.png", //E
+            "https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C71FN9-0YVkL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UY1000_.png", //F
+            "https://gramicci.com/cdn/shop/files/G4SU-T098_Black_1.jpg?v=1708016889&width=800", //G
+            "https://m.media-amazon.com/images/I/41wzP2XQz6L._AC_UY1000_.jpg", //H
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYo4023cTFOXsmXk5FPoZZDqOtvBaC5f4tew&s", //I
+            "https://m.media-amazon.com/images/I/B1cRsgg-hzL._CLa%7C2140%2C2000%7C51TnqHBTFSL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UY1000_.png", //J
+            "https://m.media-amazon.com/images/I/A1WybKOVPyL._CLa%7C2140%2C2000%7C91lAQUF7XXL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UY1000_.png", //K
+            "https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C910r5tucykL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UY1000_.png", //L
+            "https://www.fivefingertees.com/cdn/shop/products/9_47ac54ce-239c-407c-8ff2-e48b2d7ec82f.jpg?v=1675371447&width=800", //M
+            "https://m.media-amazon.com/images/I/91XFGdO22wL._CLa%7C2140%2C2000%7C910fehKpMDL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UY1000_.png", //N
+            "https://cdn.shopify.com/s/files/1/1067/4288/products/KULE_Modern_O_BOY_Navy_R.jpg?v=1628810930", //O
+            "https://phantogramshop.com/cdn/shop/products/PHG-Logo-Tee.png?v=1569337686", //P
+            "https://m.media-amazon.com/images/I/61zUik+6-lL.jpg", //Q
+            "https://m.media-amazon.com/images/I/B15-AXSctvL._CLa%7C2140%2C2000%7C51PoBXIATEL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UY1000_.png", //R
+            "https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C619yNr30K%2BL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UY1000_.png", //S
+            "https://northwestriders.com/cdn/shop/products/tee_6040_Black07_1024x1024.jpg?v=1564171706", //T
+            "https://nakamurayaportland.com/cdn/shop/files/UC_BASIC_UB0D3801_A01-1_1024x1024.jpg?v=1714511092", //U
+            "https://www.cottonheritage.com/catImg/WAMHIRES/MC1047457_092023165317.jpg", //V
+            "https://m.media-amazon.com/images/I/91XFGdO22wL._CLa%7C2140%2C2000%7C51NKYHqjdjL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UY580_.png", //W
+            "https://m.media-amazon.com/images/I/615AUiMj5sL.jpg", //X
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg9elYe2gRimXe-8e69YgtuLSSFqAyQj8wjw&s", //Y
+            "https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C91qY0F4PFRL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UY1000_.png"  //Z
         ];
 
         function displayImage() {
             const input = document.getElementById("charInput").value.toUpperCase();
             const imgElement = document.getElementById("displayedImage");
-            
+
             // Assign an image based on character (A-Z)
             const index = input.charCodeAt(0) - 65; // 'A' is 65 in ASCII
             if (index >= 0 && index < images.length) {
@@ -84,11 +82,12 @@
                 */
 
                 // IF INVALID INPUT IS ENTERED, DISPLAY ALTERNATE IMAGE
-                imgElement.src = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmtkdnJhMXY4Njd1cXR3MTM3MW1nMzZ1NXNhNHlhOHA0MWF2dDUzdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/13dRJkj5wgKq9q/giphy.gif"
+                imgElement.src = "https://img.sonofatailor.com/images/customizer/product/highneck/DeepBlue_Regular.jpg"
                 imgElement.style.display = "block";
             }
         }
     </script>
 
 </body>
+
 </html>
