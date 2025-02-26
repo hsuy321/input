@@ -12,6 +12,7 @@
             position: fixed;
             top: 50%;
             left: 30%;
+            z-index: 10
         }
 
         /* STYLE FOR THE SUBMIT BUTTON */
@@ -19,7 +20,8 @@
             margin: 0;
             position: fixed;
             top: 50%;
-            right: 30%
+            right: 30%;
+            z-index: 10
         }
 
         /* STYLE FOR THE IMAGE */
@@ -28,6 +30,11 @@
             length: 100%;
             display: none;
             /* This line is mandatory */
+        }
+
+        #displayedImage:hover {
+            filter: blur(20px);
+            transition: 5s ease-in;
         }
     </style>
 </head>
@@ -39,7 +46,7 @@
     <input type="text" id="charInput" maxlength="1">
 
     <!-- BUTTON TO DISPLAY IMAGE -->
-    <button onclick="displayImage()" id="submitButton">Show Image</button>
+    <button onclick="displayImage()" id="submitButton">t-shirt</button>
 
     <!-- IMAGE TO DISPLAY -->
     <img id="displayedImage" src="" alt="Displayed Image">
